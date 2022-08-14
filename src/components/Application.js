@@ -45,8 +45,16 @@ export default function Application(props) {
         />
         <hr className="sidebar__separator sidebar--centered" />
         <nav className="sidebar__menu">
-        <DayList days={days} day={day} setDay={setDay} />
-        <InterviewerList interviewers={interviewers} interviewer={interviewer} setInterviewer={setInterviewer} />
+        <DayList 
+          days={days} 
+          value={day} 
+          onChange={setDay} 
+        />
+        <InterviewerList 
+          interviewers={interviewers} 
+          value={interviewer} 
+          onChange={setInterviewer} 
+        />
         </nav>
         <img
           className="sidebar__lhl sidebar--centered"

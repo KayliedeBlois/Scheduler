@@ -34,6 +34,7 @@ const interviewers = [
 export default function Application(props) {
   const [day, setDay] = useState("Monday");
   const [interviewer, setInterviewer] = useState("name");
+  const [student, setStudent] = useState("student name");
   
   return (
     <main className="layout">
@@ -54,6 +55,10 @@ export default function Application(props) {
           interviewers={interviewers} 
           value={interviewer} 
           onChange={setInterviewer} 
+        />
+        <Form 
+          value={student}
+          onChange={setStudent}
         />
         </nav>
         <img

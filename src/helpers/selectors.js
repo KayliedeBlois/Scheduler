@@ -10,10 +10,8 @@ export function getAppointmentsForDay(state, name) {
         if(day.appointments.includes(parseInt(appointment)) === true) {
           filteredAppointments.push(state.appointments[appointment]);
         }
-        
       }
     }
-
   }
 
   if (state.days !== []) {
@@ -22,6 +20,4 @@ export function getAppointmentsForDay(state, name) {
   } else {
     return [];
   }
-
-  
 }

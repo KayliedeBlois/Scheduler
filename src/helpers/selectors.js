@@ -12,7 +12,7 @@ export function getAppointmentsForDay(state, name) {
         }
       }
     }
-  }
+  };
 
   if (state.days !== []) {
     const filteredDays = state.days.filter(day => filterAppointments(day));
@@ -21,3 +21,12 @@ export function getAppointmentsForDay(state, name) {
     return [];
   }
 }
+
+export function getInterview(state, interview) {
+
+  if (!interview) {
+    return null;
+  }
+
+  return {student: interview.student, interviewer: state.interviewers[interview.interviewer]}
+};

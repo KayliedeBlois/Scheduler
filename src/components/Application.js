@@ -5,6 +5,7 @@ import DayList from "./DayList";
 import InterviewerList from "./InterviewerList";
 import Appointment from "./Appointment";
 import { getAppointmentsForDay, getInterview } from "helpers/selectors";
+import useVisualMode from "hooks/useVisualMode";
 
 const interviewers = [
   { id: 1, name: "Sylvia Palmer", avatar: "https://i.imgur.com/LpaY82x.png" },
@@ -13,48 +14,6 @@ const interviewers = [
   { id: 4, name: "Cohana Roy", avatar: "https://i.imgur.com/FK8V841.jpg" },
   { id: 5, name: "Sven Jones", avatar: "https://i.imgur.com/twYrpay.jpg" }
 ];
-
-// const appointments = {
-//   "1": {
-//     id: 1,
-//     time: "12pm",
-//   },
-//   "2": {
-//     id: 2,
-//     time: "1pm",
-//     interview: {
-//       student: "Lydia Miller-Jones",
-//       interviewer:{
-//         id: 3,
-//         name: "Sylvia Palmer",
-//         avatar: "https://i.imgur.com/LpaY82x.png",
-//       }
-//     }
-//   },
-//   "3": {
-//     id: 3,
-//     time: "2pm",
-//   },
-//   "4": {
-//     id: 4,
-//     time: "3pm",
-//     interview: {
-//       student: "Archie Andrews",
-//       interviewer:{
-//         id: 4,
-//         name: "Cohana Roy",
-//         avatar: "https://i.imgur.com/FK8V841.jpg",
-//       }
-//     }
-//   },
-//   "5": {
-//     id: 5,
-//     time: "4pm",
-//   }
-// };
-
-
-
 
 
 export default function Application(props) {
@@ -81,15 +40,8 @@ export default function Application(props) {
     );
   });
 
-  // const state = { day: "Monday", days: [] };
-  // setState({ ...state, day: "Tuesday" });
-
-  // const [days, setDays] = useState([]);
-  // const [day, setDay] = useState('Monday');
-  // const [interviewer, setInterviewer] = useState("name");
 
   const setDay = day => setState({ ...state, day });
-  // const setDays = (days) => setState(prev => ({ ...prev, days }));
   const setInterviewer = interviewer => setState({ ...state, interviewer });
 
 
@@ -99,13 +51,9 @@ export default function Application(props) {
       axios.get('http://localhost:8001/api/appointments'),
       axios.get('http://localhost:8001/api/interviewers'),
     ]).then((all) => {
-      console.log(all)
       setState(prev => ({...prev, days: all[0].data, appointments: all[1].data, interviewers: all[2].data}))
     })
 
-    // axios.get("http://localhost:8001/api/days").then(response => {
-    //   setDays(response.data);
-    // });
   }, [state.days], [state.appointments], [state.interviewers]);
 
   

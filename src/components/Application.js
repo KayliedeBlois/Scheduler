@@ -26,6 +26,8 @@ export default function Application(props) {
     appointments: {}
   });
 
+
+
   const bookInterview = (appointmentId, interview) => {
 
     // const appointment = {
@@ -49,6 +51,13 @@ export default function Application(props) {
 
   };
 
+    // use appointment id to find the right appoint and set interview data to null
+  const cancelInterview = (appointmentId) => {
+
+    return axios.delete(`/api/appointments/${appointmentId}`).then(res => {
+    });
+
+    };
 
   const interviewers = getInterviewersForDay(state, state.day)
 
@@ -64,9 +73,11 @@ export default function Application(props) {
         interview={interview}
         interviewers={interviewers}
         bookInterview={bookInterview}
+        cancelInterview={cancelInterview}
       />
     );
   });
+
 
 
   const setDay = day => setState({ ...state, day });

@@ -28,7 +28,7 @@ export function getInterview(state, interview) {
     return null;
   }
 
-  return {student: interview.student, interviewer: state.interviewers[interview.interviewer]}
+  return {student: interview.student, interviewer: state.interviewers[interview.interviewer]};
 };
 
 
@@ -47,9 +47,9 @@ export function getInterviewersForDay(state, name) {
   }
 
   const appointments = filteredDay[0].appointments;
-
   for(let appointment in state.appointments) {
     if(appointments.includes(parseInt(appointment)) && state.appointments[appointment].interview) {
+      // console.log(state.appointments[appointment].interview);
       filteredInterviewers.push(state.interviewers[state.appointments[appointment].interview.interviewer]);
     }
   }

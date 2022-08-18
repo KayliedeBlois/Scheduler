@@ -13,14 +13,15 @@ export default function Form(props) {
     setInterviewer(null);
   };
 
+  //on cancel reset to EMPTY component
   const cancel = () => {
     props.onCancel();
     reset();
   };
 
+  //using student inputted name from form
   const save = () => {
-    console.log(interviewer);
-    props.onSave(student.name, interviewer);
+    props.onSave(student, interviewer);
   }
 
   return(

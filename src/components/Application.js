@@ -6,7 +6,7 @@ import InterviewerList from "./InterviewerList";
 import Appointment from "./Appointment";
 import { getAppointmentsForDay, getInterview, getInterviewersForDay } from "helpers/selectors";
 import useVisualMode from "hooks/useVisualMode";
-
+import useApplicationData from "hooks/useApplicationData";
 
 // const interviewers = [
 //   { id: 1, name: "Sylvia Palmer", avatar: "https://i.imgur.com/LpaY82x.png" },
@@ -18,46 +18,54 @@ import useVisualMode from "hooks/useVisualMode";
 
 
 export default function Application(props) {
-  const [state, setState] = useState({
-    day: "Monday", 
-    days: [],
-    interviewer: "name",
-    interviewers: {},
-    appointments: {}
-  });
+
+  const {
+    state,
+    setDay,
+    bookInterview,
+    cancelInterview
+  } = useApplicationData();
+  
+  // [state, setState] = useState({
+  //   day: "Monday", 
+  //   days: [],
+  //   interviewer: "name",
+  //   interviewers: {},
+  //   appointments: {}
+  // });
 
 
 
-  const bookInterview = (appointmentId, interview) => {
+  // const bookInterview = (appointmentId, interview) => {
 
-    // const appointment = {
-    //   ...state.appointments[appointmentId],
-    //   interview: { ...interview }
-    // };
+  //   // const appointment = {
+  //   //   ...state.appointments[appointmentId],
+  //   //   interview: { ...interview }
+  //   // };
 
-    // const appointments = {
-    //   ...state.appointments,
-    //   [appointmentId]: appointment
-    // };
+  //   // const appointments = {
+  //   //   ...state.appointments,
+  //   //   [appointmentId]: appointment
+  //   // };
 
 
-    // setState({
-    //   ...state,
-    //   appointments
-    // });
+  //   // setState({
+  //   //   ...state,
+  //   //   appointments
+  //   // });
 
-    return axios.put(`/api/appointments/${appointmentId}`, { interview }).then(res => {
-    });
+  //   return axios.put(`/api/appointments/${appointmentId}`, { interview }).then(res => {
+  //   });
 
-  };
+  // };
 
     // use appointment id to find the right appointment and set interview data to null
-  const cancelInterview = (appointmentId) => {
+  // const cancelInterview = (appointmentId) => {
 
-    return axios.delete(`/api/appointments/${appointmentId}`).then(res => {
-    });
+  //   return axios.delete(`/api/appointments/${appointmentId}`).then(res => {
+  //   });
 
-    };
+  //   };
 
   const interviewers = getInterviewersForDay(state, state.day)
 
@@ -80,20 +88,20 @@ export default function Application(props) {
 
 
 
-  const setDay = day => setState({ ...state, day });
-  const setInterviewer = interviewer => setState({ ...state, interviewer });
+  // const setDay = day => setState({ ...state, day });
+  // const setInterviewer = interviewer => setState({ ...state, interviewer });
 
 
-  useEffect(() => {
-    Promise.all([
-      axios.get(`/api/days`),
-      axios.get(`/api/appointments`),
-      axios.get(`/api/interviewers`),
-    ]).then((all) => {
-      setState(prev => ({...prev, days: all[0].data, appointments: all[1].data, interviewers: all[2].data}))
-    })
+  // useEffect(() => {
+  //   Promise.all([
+  //     axios.get(`/api/days`),
+  //     axios.get(`/api/appointments`),
+  //     axios.get(`/api/interviewers`),
+  //   ]).then((all) => {
+  //     setState(prev => ({...prev, days: all[0].data, appointments: all[1].data, interviewers: all[2].data}))
+  //   })
 
-  }, [state.days], [state.appointments], [state.interviewers]);
+  // }, [state.days], [state.appointments], [state.interviewers]);
 
   
   
@@ -112,11 +120,6 @@ export default function Application(props) {
           value={state.day} 
           onChange={setDay} 
         />
-        {/* <InterviewerList 
-          interviewers={interviewers} 
-          value={state.interviewer} 
-          onChange={setInterviewer} 
-        /> */}
         </nav>
         <img
           className="sidebar__lhl sidebar--centered"
@@ -125,15 +128,6 @@ export default function Application(props) {
         />
       </section>
       <section className="schedule">
-        {/* {dailyAppointments.map((appointment) => 
-          <Appointment 
-            key={appointment.id} 
-            id={appointment.id}
-            time={appointment.time}
-            interview={interview}
-            interviewers={interviewers}
-          />
-        )} */}
         {schedule}
         <Appointment 
           key="last"

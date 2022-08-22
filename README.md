@@ -1,6 +1,7 @@
 # Interview Scheduler
 
 Interview Scheduler is a React based app that allows users to book and cancel interviews.
+
 ## Getting Started
 
 1. [Create](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) a new repository using this repository as a template.

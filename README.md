@@ -9,6 +9,11 @@ Interview Scheduler is a React based app that allows users to book and cancel in
 4. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
 5. Go to <http://localhost:8080/> in your browser.
 
+## Final Product
+!["Screenshot of Homepage"](https://github.com/KayliedeBlois/Scheduler/blob/master/Pictures/Interview%20Scheduler%20Home.png?raw=true)
+!["Screenshot of Adding New Appointment"](https://github.com/KayliedeBlois/Scheduler/blob/master/Pictures/Interview%20Scheduler%20Add%20Appointment.png?raw=true)
+!["Screenshot of Deleting Appointment"](https://github.com/KayliedeBlois/Scheduler/blob/master/Pictures/Interview%20Scheduler%20Delete%20Appointment.png?raw=true)
+
 ## Dependencies
 
 - Axios

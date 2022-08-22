@@ -1,8 +1,22 @@
 # Interview Scheduler
 
-## Setup
+Interview Scheduler is a React based app that allows users to book and cancel interviews.
+## Getting Started
 
-Install dependencies with `npm install`.
+1. [Create](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) a new repository using this repository as a template.
+2. Clone your repository onto your local device.
+3. Install dependencies using the `npm install` command.
+4. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
+5. Go to <http://localhost:8080/> in your browser.
+
+## Dependencies
+
+- Axios
+- React-test-renderer
+- @testing-library/react-hooks
+- React
+- Classnames
+- Normalize.css
 
 ## Running Webpack Development Server
 
@@ -21,3 +35,13 @@ npm test
 ```sh
 npm run storybook
 ```
+
+## Installing React-test-renderer
+- React-test-renderer version must match the version of react and react-dom
+
+```sh
+npm install <package> --save
+```
+
+
+

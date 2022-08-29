@@ -49,5 +49,5 @@ npm run storybook
 npm install <package> --save
 ```
 
-
-
+## Get Scheduler API
+Clone the Scheduler API https://github.com/lighthouse-labs/scheduler-api and follow the instructions.

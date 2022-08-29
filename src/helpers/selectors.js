@@ -47,9 +47,11 @@ export function getInterviewersForDay(state, name) {
     return [];
   }
 
+
+
   const appointments = filteredDay[0].appointments;
   for(let appointment in state.appointments) {
-    if(appointments.includes(parseInt(appointment)) && state.appointments[appointment].interview) {
+    if(appointments.includes(parseInt(appointment)) && state.appointments[appointment].interview && !filteredInterviewers.includes(state.interviewers[state.appointments[appointment].interview.interviewer])) {
       filteredInterviewers.push(state.interviewers[state.appointments[appointment].interview.interviewer]);
     }
   }

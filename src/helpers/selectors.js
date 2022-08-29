@@ -14,6 +14,7 @@ export function getAppointmentsForDay(state, name) {
     }
   };
 
+  // Used to populate appointment slots by day
   if (state.days !== []) {
     const filteredDays = state.days.filter(day => filterAppointments(day));
     return filteredAppointments;
@@ -49,7 +50,6 @@ export function getInterviewersForDay(state, name) {
   const appointments = filteredDay[0].appointments;
   for(let appointment in state.appointments) {
     if(appointments.includes(parseInt(appointment)) && state.appointments[appointment].interview) {
-      // console.log(state.appointments[appointment].interview);
       filteredInterviewers.push(state.interviewers[state.appointments[appointment].interview.interviewer]);
     }
   }

@@ -1,5 +1,4 @@
 import React, { useState, useEffect} from "react";
-import useVisualMode from "./useVisualMode";
 import axios from "axios";
 
 
@@ -28,16 +27,6 @@ const useApplicationData = () => {
 
   // books interview for selected appointment time
   const bookInterview = (appointmentId, interview) => {
-
-    const appointment = {
-      ...state.appointments[appointmentId],
-      interview: {...interview}
-    };
-
-    const appointments = {
-      ...state.appointments,
-      [appointmentId]: appointment
-    };
 
     const dayOfWeek = selectDay(state.day)
       let day = {
@@ -93,9 +82,8 @@ const useApplicationData = () => {
     });
   };
 
-  // sets Day and Interviewer state
+  // sets Day state
   const setDay = day => setState({ ...state, day });
-  const setInterviewer = interviewer => setState({ ...state, interviewer });
 
 
   useEffect(() => {

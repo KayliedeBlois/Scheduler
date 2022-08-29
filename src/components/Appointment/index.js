@@ -43,7 +43,6 @@ export default function Appointment(props) {
   }
 
   const remove = () => {
-
     if (mode === CONFIRM) {
       transition(DELETING, true);
       props

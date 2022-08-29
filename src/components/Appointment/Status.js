@@ -1,5 +1,6 @@
 import React from "react";
 
+// Appointment status component
 export default function Status(props) {
   
   return(

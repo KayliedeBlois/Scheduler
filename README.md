@@ -7,8 +7,8 @@ Interview Scheduler is a React based app that allows users to book and cancel in
 1. [Create](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) a new repository using this repository as a template.
 2. Clone your repository onto your local device.
 3. Install dependencies using the `npm install` command.
-4. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
-5. Go to <http://localhost:8080/> in your browser.
+4. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8000/>.
+5. Go to <http://localhost:8000/> in your browser.
 
 ## Final Product
 !["Screenshot of Homepage"](https://github.com/KayliedeBlois/Scheduler/blob/master/Pictures/Interview%20Scheduler%20Home.png?raw=true)
@@ -50,4 +50,4 @@ npm install <package> --save
 ```
 
 ## Get Scheduler API
-Clone the Scheduler API https://github.com/lighthouse-labs/scheduler-api and follow the instructions.
+Clone the [Scheduler API](https://github.com/lighthouse-labs/scheduler-api) and follow the instructions.

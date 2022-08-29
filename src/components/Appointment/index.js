@@ -56,7 +56,7 @@ export default function Appointment(props) {
   }
 
   const errorClose = () => {
-    back();
+    transition(SHOW);
   };
 
   const edit = () => {
